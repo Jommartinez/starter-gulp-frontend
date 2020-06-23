@@ -1,0 +1,21 @@
+/* CSS Document */
+
+/*!
+name: website
+author: Jonathan Martinez
+URL: https://jommartinez.com
+*/
+
+/* General */
+@import 'base/fonts';
+@import 'base/vars';
+@import 'base/reset';
+@import 'base/mixins';
+@import 'base/global';
+
+/****************** Partials ******************/
+@import 'partials/header';
+@import 'partials/footer';
+
+/****************** Componentes ******************/
+@import 'components/componente';

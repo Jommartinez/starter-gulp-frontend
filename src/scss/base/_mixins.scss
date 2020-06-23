@@ -1,0 +1,79 @@
+/* =======================================================================
+## ++ Media Queries
+========================================================================== */
+
+/* 
+    Ejemplo.
+    .container{
+        width:1024px;
+        @include sm{
+            width:90%;
+        }
+    }
+*/ 
+
+@mixin sm{
+        @media screen and #{$sm}{ @content; }
+}
+
+@mixin md{
+        @media screen and #{$md}{ @content; }
+}
+
+@mixin lg{
+        @media screen and #{$lg}{ @content; }
+}
+
+@mixin xl{
+    @media screen and #{$xl}{ @content; }
+}
+
+@mixin xxl{
+    @media screen and #{$xxl}{ @content; }
+}
+/* =======================================================================
+## ++ Clearfix
+========================================================================== */
+
+/*
+
+    Ejemplo.
+    @include clearfix();
+
+*/
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+/* =======================================================================
+## ++ Transformacion unidades
+========================================================================== */
+
+/*  
+    Ejemplo. 
+    width:cp(512px, 1024px) 
+    Este sería el resultado: .block{width:50%;}   
+*/
+
+@function cp($target, $container) {
+    @return ($target / $container) * 100%;
+}
+
+/* 
+    Ejemplo.
+    @include font-size(15);
+}
+*/
+@mixin font-size($sizeValue: $base-font-size) {
+  font-size: $sizeValue + px;
+  font-size: ($sizeValue * 0.0625) + rem;
+}
+
